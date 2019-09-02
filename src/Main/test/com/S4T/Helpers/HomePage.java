@@ -20,7 +20,7 @@ public class HomePage extends PageObject {
 	@FindBy(how = How.ID, using = "closediv")
 	private WebElement closePopup;
 
-	@FindBy(how = How.NAME, using = "your-nam")
+	@FindBy(how = How.NAME, using = "your-name")
 	private WebElement fullname;
 
 	@FindBy(how = How.NAME, using = "your-email")
