@@ -31,6 +31,9 @@ public class HomePage extends PageObject {
 
 	@FindBy(how = How.NAME, using = "your-subject")
 	private WebElement subject_type;
+	
+	@FindBy(how = How.XPATH, using = "//*[@class='widget widget_text']/*[@class='widget-title']")
+	private WebElement resume_widget_tittle;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='menu-gm']/li[contains(@id,'menu-item')]")
 	private List<WebElement> menuItems;
@@ -55,5 +58,11 @@ public class HomePage extends PageObject {
 				menuItems.get(i).click();
 			}
 		}
+	}
+	
+	public String getResumeWidgetText(){
+		String widgetText = null;
+		widgetText = resume_widget_tittle.getText();
+		return widgetText;
 	}
 }

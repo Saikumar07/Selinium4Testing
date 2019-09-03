@@ -1,5 +1,6 @@
 package com.S4T.TestCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.S4T.Helpers.HomePage;
@@ -16,5 +17,13 @@ public class HomePageTestcases extends BaseClass {
 		homePage.clickOnMegaMenu(ProvisingConstants.downloads);
 		homePage.contactPeson("saikumar", "bhimanasai7@gmail.com",
 				"7416690390", "I have a query");
+	}
+	
+	@Test
+	public void verifyResumeWidgetTittle(){
+		test = reporter.createTest("verify resume widget Title");
+		String resumeTitle = homePage.getResumeWidgetText();
+		System.out.println(resumeTitle);
+		Assert.assertEquals(resumeTitle, "NAGESH NOW WITH");
 	}
 }
